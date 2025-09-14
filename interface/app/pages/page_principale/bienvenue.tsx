@@ -4,7 +4,7 @@ import { Footer } from "../../composants/footer/footer";
 
 export function Bienvenue() {
     return (
-        <>
+        <div className="conteneur-page-generale">
             <Header />
             <Navbar />
             <main className="conteneur-principal">
@@ -38,6 +38,6 @@ Proin eu justo ut arcu ultricies lacinia. Ut eleifend lacus massa, sit amet inte
                 </div>
             </main>
             <Footer />
-        </>
+        </div>
     )
 }

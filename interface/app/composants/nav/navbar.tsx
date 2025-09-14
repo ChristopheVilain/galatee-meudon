@@ -5,9 +5,11 @@ export function Navbar() {
   
   // Hardcoded navigation sections
   const navItems = [
-    { path: "/", label: "Accueil", icon: "🏠" },
-    { path: "/le-club", label: "Le Club", icon: "🏛️" },
-    { path: "/contact", label: "Contact", icon: "📞" }
+    { path: "/", label: "Accueil", icon: "🤿" },
+    { path: "/le-club", label: "Le Club", icon: "🐟" },
+    { path: "/evenements", label: "Evenements & Plannings", icon: "🗓️" },
+    { path: "/documents", label: "Documents & Cours", icon: "📚" },
+    { path: "/souvenirs", label: "Souvenirs & Photos", icon: "📸" },
   ];
 
   return (

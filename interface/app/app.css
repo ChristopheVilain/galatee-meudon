@@ -11,9 +11,11 @@ html {
 
 body {
   @apply bg-white dark:bg-gray-950;
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -21,7 +23,15 @@ body {
 }
 
 #root {
-  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.conteneur-page-generale {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Composants du header */
@@ -100,6 +110,8 @@ body {
 
 .galatee-navbar-link.active {
   @apply bg-blue-100 text-blue-700 font-medium;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .galatee-navbar-icon {
@@ -117,7 +129,8 @@ body {
 /* Animation des éléments de la navbar */
 
 .galatee-navbar:hover .galatee-navbar-label,
-.galatee-navbar:hover .galatee-navbar-icon {
+.galatee-navbar:hover .galatee-navbar-icon,
+.galatee-navbar:hover .galatee-navbar-link.active {
   opacity: 1;
 }
 
@@ -138,8 +151,8 @@ body {
 /* Composants génériques des pages */
 
 .conteneur-principal {
-  @apply flex flex-col items-center justify-center pb-4 text-justify pt-4;
-  min-height: calc(100vh - 2rem);
+  @apply flex flex-col items-center justify-start pb-4 text-justify pt-4;
+  flex: 1;
   margin-left: 6rem; /* Account for collapsed navbar width */
   margin-right: 2rem; /* Account for collapsed navbar width */
 }
