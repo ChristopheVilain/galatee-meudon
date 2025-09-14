@@ -5,19 +5,29 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-html,
+html {
+  height: 100%;
+}
+
 body {
   @apply bg-white dark:bg-gray-950;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
 }
 
+#root {
+  height: 100%;
+}
+
 /* Composants du header */
 
 .galatee-header {
-  @apply flex flex-row items-center justify-between w-full gap-9 px-[5%] border-b border-gray-300 pb-4;
+  @apply flex flex-row items-center justify-between w-full gap-9 px-[5%] border-b border-gray-300;
   --header-height: auto;
   min-height: var(--header-height, 5rem);
 }
@@ -27,11 +37,11 @@ body {
 }
 
 .galatee-header-logo {
-  @apply w-[25%] max-w-[25%] p-4;
+  @apply w-[25%] max-w-[25%];
 }
 
 .galatee-connexion {
-  @apply flex items-end gap-9;
+  @apply flex items-end gap-9 pr-4;
 }
 
 .galatee-login-input {
@@ -42,12 +52,31 @@ body {
   @apply w-full p-2 bg-blue-500 text-white rounded-md;
 }
 
+/* Composants du footer */
+
+.galatee-footer {
+  @apply flex flex-row items-center justify-between w-full gap-2 px-[5%] border-t border-gray-300 pb-4 pt-4;
+}
+
+.galatee-footer-mentions-legales {
+  @apply flex-1 text-sm text-gray-700;
+}
+
+.galatee-footer-contact {
+  @apply flex-1 text-sm text-gray-700;
+}
+
+.galatee-footer-copyright {
+  @apply flex-1 text-sm text-gray-700;
+}
+
 /* Barre latérale de navigation principale */
+/* Etat etendu */
 
 .galatee-navbar {
   @apply fixed left-0 bg-gray-50 border-r border-gray-200 transition-all duration-300 ease-in-out;
-  top: var(--header-height, 5rem);
-  height: calc(100vh - var(--header-height, 5rem));
+  top: 0;
+  height: 100vh;
   width: 4rem; /* Collapsed width */
   overflow: hidden;
 }
@@ -57,7 +86,7 @@ body {
 }
 
 .galatee-navbar-list {
-  @apply flex flex-col space-y-2 p-4;
+  @apply flex flex-col space-y-2 pl-4 pr-2 py-4;
 }
 
 .galatee-navbar-item {
@@ -85,17 +114,21 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
+/* Animation des éléments de la navbar */
+
 .galatee-navbar:hover .galatee-navbar-label,
 .galatee-navbar:hover .galatee-navbar-icon {
   opacity: 1;
 }
 
-/* Menu label for collapsed state */
+/* Etat reduit de la navbar */
+
 .galatee-navbar-menu-label {
-  @apply absolute top-4 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-500;
+  @apply absolute left-1/2 transform -translate-x-1/2 text-sm font-medium text-gray-700 pt-2;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transition: opacity 0.3s ease-in-out;
+  top: 1rem;
 }
 
 .galatee-navbar:hover .galatee-navbar-menu-label {
@@ -105,11 +138,18 @@ body {
 /* Composants génériques des pages */
 
 .conteneur-principal {
-  @apply flex flex-col items-center justify-center pt-16 pb-4;
+  @apply flex flex-col items-center justify-center pb-4 text-justify pt-4;
+  min-height: calc(100vh - 2rem);
+  margin-left: 6rem; /* Account for collapsed navbar width */
+  margin-right: 2rem; /* Account for collapsed navbar width */
 }
 
 .div-principale {
   @apply flex-1 flex flex-col items-center gap-16 min-h-0;
+}
+
+.titre-div-principale {
+  @apply text-2xl font-bold pb-4;
 }
 
 .div-secondaire {
