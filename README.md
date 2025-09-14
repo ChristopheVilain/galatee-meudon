@@ -1,2 +1,4 @@
 # galatee-meudon
-Site web du club de plongée Galatée à Meudon
+
+Site web du club de plongée Galatée à Meudon.
+

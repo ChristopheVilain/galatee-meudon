@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+/* Composants du header */
+
+.galatee-header {
+  @apply flex flex-row items-center justify-between w-full gap-9 px-[5%] border-b border-gray-300 pb-4;
+  --header-height: auto;
+  min-height: var(--header-height, 5rem);
+}
+
+.galatee-header.dynamic-height {
+  --header-height: auto;
+}
+
+.galatee-header-logo {
+  @apply w-[25%] max-w-[25%] p-4;
+}
+
+.galatee-connexion {
+  @apply flex items-end gap-9;
+}
+
+.galatee-login-input {
+  @apply w-full p-2 border border-gray-300 rounded-md;
+}
+
+.galatee-login-button {
+  @apply w-full p-2 bg-blue-500 text-white rounded-md;
+}
+
+/* Barre latérale de navigation principale */
+
+.galatee-navbar {
+  @apply fixed left-0 bg-gray-50 border-r border-gray-200 transition-all duration-300 ease-in-out;
+  top: var(--header-height, 5rem);
+  height: calc(100vh - var(--header-height, 5rem));
+  width: 4rem; /* Collapsed width */
+  overflow: hidden;
+}
+
+.galatee-navbar:hover {
+  width: 16rem; /* Expanded width (w-64) */
+}
+
+.galatee-navbar-list {
+  @apply flex flex-col space-y-2 p-4;
+}
+
+.galatee-navbar-item {
+  @apply list-none;
+}
+
+.galatee-navbar-link {
+  @apply flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200;
+  white-space: nowrap;
+}
+
+.galatee-navbar-link.active {
+  @apply bg-blue-100 text-blue-700 font-medium;
+}
+
+.galatee-navbar-icon {
+  @apply text-xl flex-shrink-0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.galatee-navbar-label {
+  @apply text-sm font-medium;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.galatee-navbar:hover .galatee-navbar-label,
+.galatee-navbar:hover .galatee-navbar-icon {
+  opacity: 1;
+}
+
+/* Menu label for collapsed state */
+.galatee-navbar-menu-label {
+  @apply absolute top-4 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-500;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.galatee-navbar:hover .galatee-navbar-menu-label {
+  opacity: 0;
+}
+
+/* Composants génériques des pages */
+
+.conteneur-principal {
+  @apply flex flex-col items-center justify-center pt-16 pb-4;
+}
+
+.div-principale {
+  @apply flex-1 flex flex-col items-center gap-16 min-h-0;
+}
+
+.div-secondaire {
+  @apply flex-1 flex flex-col items-center gap-16 min-h-0;
+}
