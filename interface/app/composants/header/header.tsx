@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
+
 import logoGalatee from "../img/logo_50_ans.png";
+import faviconGalatee from "../img/favicon_32x32.png";
+
 import { Connexion } from "../header/connexion";
 
 export function Header() {
@@ -33,6 +36,7 @@ export function Header() {
 
     return (
         <header ref={headerRef} className="galatee-header dynamic-height">
+            <link rel="icon" href={faviconGalatee} />
             <div className="galatee-header-logo">
                 <title>Galatée Meudon</title>
                 <img src={logoGalatee} alt="Galatée Meudon" />

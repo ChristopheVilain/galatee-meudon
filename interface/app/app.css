@@ -166,5 +166,54 @@ body {
 }
 
 .div-secondaire {
-  @apply flex-1 flex flex-col items-center gap-16 min-h-0;
+  @apply flex-1 flex flex-col justify-start gap-4 float-left pr-[25%];
+}
+
+.titre-div-secondaire {
+  @apply text-2xl font-bold pb-4 border border-gray-300 rounded-md p-4;
+}
+
+/* Gestion des pages texte avec photos */
+/* Header */
+.post-texte-photo {
+  @apply flex flex-col gap-4 border border-gray-300 rounded-md p-4;
+}
+
+.post-texte-photo-header {
+  @apply flex flex-row items-center gap-4;
+}
+
+.date-post-texte-photo {
+  @apply text-sm text-gray-500;
+}
+
+.titre-post-texte-photo {
+  @apply text-2xl font-bold;
+}
+
+/* Content */
+
+
+.abstract-post-texte-photo-container {
+  @apply flex flex-row items-center gap-4;
+}
+
+.picture-post-texte-photo {
+  @apply w-[20%] float-right place-self-end;
+}
+
+.abstract-post-texte-photo {
+  @apply text-sm text-gray-500;
+}
+
+.post-texte-photo-content {
+  @apply flex flex-col gap-4;
+}
+
+.content-post-text {
+  @apply flex float-left;
+}
+
+.content-post-texte-photo {
+  @apply text-sm text-gray-500;
 }
