@@ -1,4 +1,4 @@
-import type { Route } from "./+types/le-club";
+import type { Route } from "./+types/route_le_club";
 import { LeClub } from "~/pages/page_le_club/le_club";
 
 export function meta({}: Route.MetaArgs) {

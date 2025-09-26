@@ -1,4 +1,4 @@
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/route_home";
 import { Bienvenue } from "~/pages/page_principale/bienvenue";
 
 export function meta({}: Route.MetaArgs) {
