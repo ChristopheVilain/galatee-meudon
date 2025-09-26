@@ -103,6 +103,11 @@ body {
   @apply list-none;
 }
 
+.galatee-navbar-item-subroute {
+  @apply list-none;
+  margin-left: 1rem;
+}
+
 .galatee-navbar-link {
   @apply flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200;
   white-space: nowrap;
@@ -120,17 +125,33 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
+.galatee-navbar-icon-subroute {
+  @apply text-xl flex-shrink-0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-size: 0.8rem;
+}
+
 .galatee-navbar-label {
   @apply text-sm font-medium;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
+.galatee-navbar-label-subroute {
+  @apply text-sm font-medium;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-size: 0.8rem;
+}
+
 /* Animation des éléments de la navbar */
 
 .galatee-navbar:hover .galatee-navbar-label,
 .galatee-navbar:hover .galatee-navbar-icon,
-.galatee-navbar:hover .galatee-navbar-link.active {
+.galatee-navbar:hover .galatee-navbar-link.active,
+.galatee-navbar:hover .galatee-navbar-icon-subroute,
+.galatee-navbar:hover .galatee-navbar-label-subroute {
   opacity: 1;
 }
 
@@ -165,8 +186,13 @@ body {
   @apply text-2xl font-bold pb-4;
 }
 
-.div-secondaire {
+.div-secondaire-bienvenue {
   @apply flex-1 flex flex-col justify-start gap-4 float-left pr-[25%];
+}
+
+
+.div-secondaire-standard {
+  @apply flex-1 flex flex-col justify-start gap-4 float-left;
 }
 
 .titre-div-secondaire {
@@ -216,4 +242,14 @@ body {
 
 .content-post-texte-photo {
   @apply text-sm text-gray-500;
+}
+
+/* Gestion menu carre page "Le Club" */
+
+.conteneur-menu-carre {
+  @apply flex flex-row gap-4 w-full pb-4;
+}
+
+.menu-carre-item {
+  @apply flex flex-col gap-4 w-full rounded-md border border-gray-300 justify-center items-center;
 }

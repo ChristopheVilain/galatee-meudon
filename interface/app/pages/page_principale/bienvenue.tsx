@@ -50,7 +50,7 @@ export function Bienvenue() {
                 <div className="div-principale">
                     <h1 className="titre-div-principale">Bienvenue sur le site web du club de plongée Galatée Meudon !</h1>
                 </div>
-                <div className="div-secondaire">
+                <div className="div-secondaire-bienvenue">
                     <div className="post-texte-photo">
                         <h3 className="titre-div-secondaire">A la une</h3>
                         <div className="post-texte-photo-header">
@@ -68,7 +68,7 @@ export function Bienvenue() {
                         </div>
                     </div>
                 </div>
-                <div className="div-secondaire">
+                <div className="div-secondaire-bienvenue">
                     <h3 className="titre-div-secondaire">Les news</h3>
                     {
                     lesNews.map((news) => (
